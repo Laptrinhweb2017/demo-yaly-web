@@ -1,0 +1,189 @@
+# 🧠 SKILL: PARALLAX SECTION (Luxury Scroll Effect)
+
+> Áp dụng cho:
+> **Fashion / Editorial / Landing Page cao cấp**
+> Không áp dụng cho: web shop giá rẻ, dashboard, app nội bộ
+
+===========================================================
+
+I. DẤU HIỆU NHẬN BIẾT WEB ĐANG DÙNG KỸ THUẬT NÀY
+
+Khi lướt web, nếu thấy:
+
+✅ Ảnh **đứng yên**, nội dung lướt qua
+✅ Không bị “dừng khựng” như scroll-snap
+✅ Cảm giác **khung nổi nhưng không có shadow**
+✅ Lướt chậm → rất “đã”
+✅ Không thấy animation bay nhảy
+
+👉 **99% là `background-attachment: fixed`**
+
+============================================================
+
+II. CÁCH NHẬN BIẾT BẰNG DEVTOOLS (CỰC QUAN TRỌNG)
+
+Mở DevTools → Inspect:
+
+1️⃣ Nhìn cấu trúc HTML
+
+Nếu thấy dạng:
+
+--html----------------------------------------------------------
+|`<section class="parallax" style="background-image: url(...)"> |
+----------------------------------------------------------------
+
+❌ Không có `<img>`
+❌ Ảnh nằm trong CSS
+
+👉 ** 100% là parallax background**
+
+2️⃣ Nhìn CSS
+
+Nếu thấy:
+
+--css---------------------------
+.parallax {                     |
+  background-attachment: fixed; |
+}                               |
+--------------------------------
+
+================================================================
+
+III. BẢN CHẤT KỸ THUẬT (HIỂU CHO SÂU)
+
+❓ Vì sao nó “nổi”?
+        * Background **không cuộn theo viewport**
+        * Nội dung (text, section) **cuộn**
+        * Não người tưởng ảnh đứng yên → **nổi**
+
+👉 Đây là **illusion thị giác**, không phải animation.
+
+==================================================================
+
+IV. CẤU TRÚC CHUẨN CỦA 1 PARALLAX SECTION
+
+---txt--------------------------------
+<section>  ← background-image + fixed |
+ ├─ overlay (đen mờ)                  |
+ └─ content (text, button)            |
+--------------------------------------
+
+KHÔNG:
+* img tag
+* position sticky
+* JS scroll
+* observer
+
+===================================================================
+
+V. CÔNG THỨC CSS CHUẨN (GHI NHỚ)
+
+1️⃣ Section chính
+
+---css------------------------
+background-image: url(...)    |
+background-size: cover        |   
+background-position: center   |
+background-repeat: no-repeat  |
+background-attachment: fixed  |
+------------------------------
+
+2️⃣ Chiều cao
+
+---css--------------
+height: 100vh       |
+min-height: 600px   |
+--------------------
+→ để ảnh đủ lớn cho hiệu ứng
+
+
+3️⃣ Overlay
+
+---css-------------------------
+background: rgba(0,0,0,0.2) |
+-------------------------------
+→ giúp chữ nổi, sang
+
+==========================================================================
+
+VI. VERSION TAILWIND
+
+---jsx-------------------------------
+<section                            |
+  className="                       |
+    h-[100vh]                       |
+    min-h-[640px]                   |
+    bg-cover                        |   
+    bg-center                       |   
+    bg-no-repeat                    |
+    flex                            | 
+    items-center                    |
+    justify-center                  |
+  "                                 |
+  style={{                          |
+    backgroundImage: `url(...)`,    |
+    backgroundAttachment: "fixed",  |
+  }}                                |
+>                                   |
+-------------------------------------
+
+==========================================================================
+
+VII. MOBILE FALLBACK (CỰC QUAN TRỌNG)
+
+⚠️ iOS Safari **KHÔNG support** `background-attachment: fixed`
+
+Cách xử lý chuẩn nghề:
+
+---css-------------------------------
+@media (max-width: 768px) {         |
+  .parallax {                       |
+    background-attachment: scroll;  |
+  }                                 |
+}                                   |
+-------------------------------------
+→ Mobile vẫn xem đẹp
+→ Desktop vẫn có parallax
+
+==========================================================================
+
+VIII. KHI NÀO NÊN / KHÔNG NÊN DÙNG
+
+✅ NÊN dùng khi:
+
+* Landing page
+* Thời trang / nghệ thuật
+* Storytelling
+
+❌ KHÔNG nên dùng khi:
+
+* Page có form dài
+* Web app
+* Dashboard
+* Performance yếu
+
+============================================================================
+
+IX. SO SÁNH NHANH (ĐỂ KHỎI NHẦM)
+
+| Kỹ thuật       | Cảm giác          | Dùng khi       |
+| -------------- | ----------------- | -------------- |
+| scroll-snap    | Dừng khựng        | Catalog, story |
+| card + shadow  | UI app            | Dashboard      |
+| parallax fixed | Luxury, editorial | Fashion        |
+| JS parallax    | nặng              | ❌             |
+
+==============================================================================
+
+X. GHI CHÚ “NGHỀ” (CÁI NÀY QUAN TRỌNG)
+
+> Web sang không phải vì animation nhiều
+> mà vì chuyển động ÍT – ĐÚNG – CHẬM**
+
+1 skill mà 80% FE junior không biết.
+
+=============================================================================
+
+XI. TÓM GỌN 1 DÒNG (NOTE CUỐI)
+
+> Khi thấy ảnh đứng yên – nội dung lướt → nghĩ ngay `background-attachment: fixed`

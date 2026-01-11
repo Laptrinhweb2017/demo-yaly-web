@@ -1,0 +1,30 @@
+tao dư an npx create-next-app@latest yaly-clone
+✔ Would you like to use TypeScript? → No
+✔ Would you like to use ESLint? → Yes
+✔ Would you like to use Tailwind CSS? → Yes
+✔ Would you like to use `src/` directory? → Yes
+✔ Would you like to use App Router? → Yes
+✔ Would you like to customize the default import alias (@/*)? → Yes
+✔ What import alias would you like configured? → @/*
+
+run dư an npm run dev
+
+tao thu muc 
+mkdir src/components
+mkdir src/lib
+mkdir src/styles
+mkdir public/images
+
+tao file
+New-Item src/app/layout.jsx -ItemType File
+New-Item src/app/page.jsx -ItemType File
+New-Item src/components/Header.jsx -ItemType File
+New-Item src/components/Footer.jsx -ItemType File
+New-Item src/components/HeroCollections.jsx -ItemType File
+New-Item src/components/BrandIntro.jsx -ItemType File
+New-Item src/components/ProductSection.jsx -ItemType File
+New-Item src/components/ProductCard.jsx -ItemType File
+New-Item src/lib/data.js -ItemType File
+
+cai dat icons
+npm install lucide-react
