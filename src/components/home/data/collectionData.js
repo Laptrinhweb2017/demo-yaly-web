@@ -28,7 +28,7 @@ export const collections = [
   {
     id: 5,
     image: "/images/DSCF0771.jpg",
-    title: "Đỉnh Cao Của Sự Thanh Lịch",
-    button: "KHÁM PHÁ BST",
+    title: "Đỉnh Cao Của Sự Thanh Lịch FASHION SHOW 2024",
+    button: "BỘ SƯU TẬP THỜI TRANG",
   },
 ];

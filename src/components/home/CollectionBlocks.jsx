@@ -28,21 +28,21 @@ export default function CollectionBlocks() {
 
           {/* CONTENT */}
           <div className="relative z-10 text-center text-white">
-            <h2 className="text-[48px] font-light tracking-[0.16em]">
+            <h2 className="text-[48px] font-semibold tracking-[0.16em]">
               {item.title}
             </h2>
 
             <button
               className="
-                mt-6
-                px-7 py-3
-                bg-white
-                text-black
-                text-[12px]
-                tracking-[0.25em]
-                hover:bg-black hover:text-white
-                transition
-              "
+                    mt-6
+                    px-7 py-3
+                    bg-white
+                    text-black
+                    text-[20px]
+                    tracking-[0.12em]   /* ← hẹp lại ở đây */
+                    hover:bg-black hover:text-white
+                    transition
+                  "
             >
               {item.button}
             </button>

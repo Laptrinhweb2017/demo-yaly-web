@@ -64,22 +64,22 @@ export default function IntroSection() {
           <a
             href="/vi/about-us/yaly-couture-bespoke-tailor-traditional-elegant-affordable-hnhoa"
             className="
-    inline-flex
-    items-center
-    justify-center
-    mt-10
-    bg-[#f58634]
-    text-white
-    px-3
-    py-3
-    text-[20px]
-    font-[500]
-    tracking-[0.18em]
-    rounded-[2px]
-    hover:bg-[#e07220]
-    transition-colors
-    duration-200
-  "
+                inline-flex
+                items-center
+                justify-center
+                mt-10
+                bg-[#f58634]
+                text-white
+                px-3
+                py-3
+                text-[20px]
+                font-[500]
+                tracking-[0.18em]
+                rounded-[2px]
+                hover:bg-[#e07220]
+                transition-colors
+                duration-200
+              "
           >
             XEM THÊM
           </a>
