@@ -23,7 +23,7 @@ export default function HeroSection() {
       sessionStorage.setItem("heroMode", "B");
 
       setTimeout(() => {
-        setSlides(heroSets.second); // B
+        setSlides(heroSets.second);
         setCurrent(0);
       }, 0);
 

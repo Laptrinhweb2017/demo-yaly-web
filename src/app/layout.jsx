@@ -1,15 +1,20 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Montserrat, Allura } from "next/font/google";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+export const allura = Allura({
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="vi">
-      <body className={inter.className}>{children}</body>
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }
